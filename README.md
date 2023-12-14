@@ -1,14 +1,17 @@
 # Modul 6 Praktikum
 
+## Rock, Paper, Scissors Image Classification
+Proyek Flask ini menunjukkan aplikasi web sederhana untuk klasifikasi gambar Gunting, Batu, Kertas menggunakan model pembelajaran mesin. Pengguna dapat mengunggah gambar tangan mereka yang sedang membuat salah satu gestur, dan model akan mengklasifikasikannya sebagai Gunting, Batu, Kertas.
+
 ## Local Development
 - Prediksi rock
-![Screenshot (561)](https://github.com/Hasby23/Modul-6-Praktikum/assets/71579603/53d91dba-56ae-42ad-96d1-71f29dc5d6ae)
+![Screenshot (564)](https://github.com/Hasby23/Modul-6-Praktikum/assets/71579603/bdcbf10a-93fa-4c29-ac94-ee1192150ac7)
 
 - Prediksi paper
-![Screenshot (560)](https://github.com/Hasby23/Modul-6-Praktikum/assets/71579603/ed5c9aa2-b524-40e6-8c78-d4e257348e62)
+![Screenshot (562)](https://github.com/Hasby23/Modul-6-Praktikum/assets/71579603/eb8cd576-ca6e-4824-9610-26ed3c216073)
 
 - Prediksi scissors
-![Screenshot (559)](https://github.com/Hasby23/Modul-6-Praktikum/assets/71579603/5237860d-4a88-4b5c-8e9a-b30b51da2654)
+![Screenshot (563)](https://github.com/Hasby23/Modul-6-Praktikum/assets/71579603/cc898b23-29d2-4b3d-9209-61ab6581af04)
 
 ## Author
 - [@Hasby23](https://www.github.com/Hasby23)
