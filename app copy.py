@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, send_from_directory
-from tensorflow.keras.models import load_model
-import tensorflow as tf
 from PIL import Image
+import tflite_runtime.interpreter as tflite
 import numpy as np
 import time
 import os
@@ -9,8 +8,7 @@ import os
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './static/uploads/'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
-model = load_model('./static/models/rps.h5')
-interpreter = tf.lite.Interpreter(model_path="static/models/rps.tflite")
+interpreter = tflite.Interpreter(model_path="static/models/rps.tflite")
 interpreter.allocate_tensors()
 
 @app.after_request
