@@ -38,7 +38,8 @@ def index():
             max_index = np.argmax(pred[0])
             print(max_index)
             max_probability = pred[0][max_index]
-            max_percentage = max_probability * 100
+            max_percentage = round(max_probability * 100, 2)
+
             
             runtimes = round(time.time()-start,4)
 
@@ -48,7 +49,7 @@ def index():
             elif max_index == 1:
                 result = "Rock"
             else:
-                result = "Scissor"
+                result = "Scissors"
 
             # max_percentage = prediction persentage
             # result = label
