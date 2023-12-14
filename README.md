@@ -3,6 +3,11 @@
 ## Rock, Paper, Scissors Image Classification
 Proyek Flask ini menunjukkan aplikasi web sederhana untuk klasifikasi gambar Gunting, Batu, Kertas menggunakan model pembelajaran mesin. Pengguna dapat mengunggah gambar tangan mereka yang sedang membuat salah satu gestur, dan model akan mengklasifikasikannya sebagai Gunting, Batu, Kertas.
 
+## Usage
+1. Run file app.py
+2. Buka browser dan navigasi ke http://localhost:2000/
+3. Upload gambar tangan membuat gestur gunting, batu, atau kertas
+
 ## Project Structure
 - 'app.py'          : File utama aplikasi flask
 - 'static/models/'  : Direktori yang berisikan model machine learning
