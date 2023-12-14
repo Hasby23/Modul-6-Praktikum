@@ -4,7 +4,6 @@ from PIL import Image
 import numpy as np
 import time
 import os
-import cv2
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './static/uploads/'
