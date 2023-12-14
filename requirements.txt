@@ -1,5 +1,4 @@
 flask
-# tensorflow-cpu
+tensorflow-cpu
 pillow
 numpy
-tflite-runtime
