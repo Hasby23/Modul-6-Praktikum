@@ -8,7 +8,7 @@ Model yang digunakan dibuat dengan menggunakan model pre train MobileNetV2 yang 
 
 ## Dataset
 ![paper](https://github.com/Hasby23/Modul-6-Praktikum/assets/71579603/19484e39-6e6b-4aff-b694-857c1c74a54d)
-![Uploading paper.png…]()
+![paper](https://github.com/Hasby23/Modul-6-Praktikum/assets/71579603/21fc1944-84a3-43da-a13e-0ecac77e79b2)
 ![rock](https://github.com/Hasby23/Modul-6-Praktikum/assets/71579603/b49d0e6e-84d7-44cd-8c90-5f331af9beef)
 
 ## Accuracy and Loss
