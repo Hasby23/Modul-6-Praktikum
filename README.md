@@ -3,10 +3,13 @@
 ## Rock, Paper, Scissors Image Classification
 Proyek Flask ini adalah aplikasi web sederhana untuk klasifikasi gambar Gunting, Batu, Kertas menggunakan model pembelajaran mesin. Pengguna dapat mengunggah gambar tangan mereka yang sedang membuat salah satu gestur, dan model akan mengklasifikasikannya sebagai Gunting, Batu, Kertas.
 
+## 
+
 ## Installation
 1. git clone https://github.com/Hasby23/Modul-6-Praktikum.git
 2. cd Modul-6-Praktikum
-   
+3. pip install -r requirements.txt
+
 ## Usage
 1. Run file app.py
 2. Buka browser dan navigasi ke http://localhost:2000/
