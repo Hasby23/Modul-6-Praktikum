@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, send_from_directory
-from tensorflow.keras.models import load_model
-import tensorflow as tf
 from PIL import Image
+import tflite_runtime.interpreter as tflite
 import numpy as np
 import time
 import os
@@ -9,8 +8,7 @@ import os
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './static/uploads/'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
-model = load_model('./static/models/rps.h5')
-interpreter = tf.lite.Interpreter(model_path="static/models/rps.tflite")
+interpreter = tflite.Interpreter(model_path="static/models/rps.tflite")
 interpreter.allocate_tensors()
 
 @app.after_request
@@ -43,17 +41,19 @@ def index():
             img = img.astype(np.float32)
             input_tensor_index = interpreter.get_input_details()[0]['index']
             interpreter.set_tensor(input_tensor_index, img)
+
             # Run inference
             interpreter.invoke()
+
             # Get the output tensor
             output_tensor_index = interpreter.get_output_details()[0]['index']
             pred = interpreter.get_tensor(output_tensor_index)
-
 
             max_index = np.argmax(pred[0])
             print(max_index)
             max_probability = pred[0][max_index]
             max_percentage = round(max_probability * 100, 2)
+
             
             runtimes = round(time.time()-start,4)
 
@@ -81,4 +81,4 @@ def send_uploaded_image(filename=''):
     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=2000)
+    app.run(debug=False)
