@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, send_from_directory
 from tensorflow.keras.models import load_model
-import tensorflow as tf
 from PIL import Image
 import numpy as np
 import time
@@ -10,19 +9,24 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = './static/uploads/'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 model = load_model('./static/models/rps.h5')
-interpreter = tf.lite.Interpreter(model_path="static/models/rps.tflite")
-interpreter.allocate_tensors()
-
-@app.after_request
-def add_header(r):
-    r.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
-    r.headers["Pragma"] = "no-cache"
-    r.headers["Expires"] = "0"
-    r.headers['Cache-Control'] = 'public, max-age=0'
-    return r
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    """
+    Fungsi untuk menampilkan halaman utama pada aplikasi Flask.
+    
+    Jika request method adalah 'POST', fungsi ini memproses gambar yang diupload,
+    melakukan klasifikasi gambar menggunakan model yang sudah dilatih, dan manampilkan hasilnya di halaman.
+
+    Parameters:
+    - None
+
+    Return:
+    - render_template: Template HTML untuk halaman utama, dengan konten yang diperbarui berdasarkan hasil klasifikasi gambar.
+      Template termasuk label prediksi, durasi waktu eksekusi, persentase akurasi dan
+      gambar yang diunggah
+    """
+
     if request.method == 'POST':
         if request.files:
             image = request.files['image']
@@ -34,30 +38,18 @@ def index():
 
             img = img[np.newaxis, :]
 
-            # Prediction Time
             start = time.time()
 
-            # Accuracy
-            # pred = model.predict(img)
-
-            img = img.astype(np.float32)
-            input_tensor_index = interpreter.get_input_details()[0]['index']
-            interpreter.set_tensor(input_tensor_index, img)
-            # Run inference
-            interpreter.invoke()
-            # Get the output tensor
-            output_tensor_index = interpreter.get_output_details()[0]['index']
-            pred = interpreter.get_tensor(output_tensor_index)
-
-
+            pred = model.predict(img)
             max_index = np.argmax(pred[0])
-            print(max_index)
             max_probability = pred[0][max_index]
+
+            # Percentage
             max_percentage = round(max_probability * 100, 2)
             
+            # Prediction Time
             runtimes = round(time.time()-start,4)
 
-            # Predicted Label
             if max_index == 0:
                 result = "Paper"
             elif max_index == 1:
@@ -65,10 +57,6 @@ def index():
             else:
                 result = "Scissors"
 
-            # max_percentage = prediction persentage
-            # result = label
-            # runtimes = the times in second
-            # image
             return render_template('/index.html', label=result,
                             run_time=runtimes, img=img, 
                             accuracy=max_percentage, uploaded_image=image.filename)
