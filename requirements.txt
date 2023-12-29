@@ -1,4 +1,4 @@
 flask
-tensorflow-cpu
+tensorflow-cpu==2.6.0
 pillow
 numpy

@@ -41,14 +41,15 @@ def index():
             start = time.time()
 
             pred = model.predict(img)
+
+            # Prediction Time
+            runtimes = round(time.time()-start,4)
+
             max_index = np.argmax(pred[0])
             max_probability = pred[0][max_index]
 
             # Percentage
-            max_percentage = round(max_probability * 100, 2)
-            
-            # Prediction Time
-            runtimes = round(time.time()-start,4)
+            max_percentage = round(max_probability * 100, 2)            
 
             if max_index == 0:
                 result = "Paper"
