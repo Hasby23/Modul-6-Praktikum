@@ -9,6 +9,7 @@ Model yang digunakan dibuat dengan menggunakan model pre-trained MobileNetV2 yan
 MobileNetV2 telah dilatih pada berbagai dataset besar, termasuk dataset ImageNet, sehingga memiliki kemampuan untuk mengenali pola dan fitur pada gambar dengan baik. Dengan menggunakan model pre-trained ini, kita dapat memanfaatkan pengetahuan yang sudah diperoleh oleh model dari dataset luas tersebut untuk tugas klasifikasi Rock, Paper, Scissors.
 
 MobileNetV2:
+
 ![The-architecture-of-MobileNetV2-DNN](https://github.com/Hasby23/Modul-6-Praktikum/assets/71579603/aff90afd-3418-457d-a9a3-b592eb82d449)
 
 ## Dataset
