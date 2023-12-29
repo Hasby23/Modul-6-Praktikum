@@ -4,7 +4,10 @@
 Proyek Flask ini adalah aplikasi web sederhana untuk klasifikasi gambar Gunting, Batu, Kertas menggunakan model pembelajaran mesin. Pengguna dapat mengunggah gambar tangan mereka yang sedang membuat salah satu gestur, dan model akan mengklasifikasikannya sebagai Gunting, Batu, Kertas.
 
 ## Machine Learning Model
-Model yang digunakan dibuat dengan menggunakan model pre train MobileNetV2 yang dilatih menggunakan dataset citra Gunting, Batu, Kertas
+Model yang digunakan dibuat dengan menggunakan model pre-trained MobileNetV2 yang dilatih menggunakan dataset citra Gunting, Batu, Kertas. MobileNetV2 adalah arsitektur CNN yang dikenal karena ringan dan efisien, cocok untuk aplikasi bergerak dan pemrosesan citra real-time.
+
+MobileNetV2 telah dilatih pada berbagai dataset besar, termasuk dataset ImageNet, sehingga memiliki kemampuan untuk mengenali pola dan fitur pada gambar dengan baik. Dengan menggunakan model pre-trained ini, kita dapat memanfaatkan pengetahuan yang sudah diperoleh oleh model dari dataset luas tersebut untuk tugas klasifikasi Rock, Paper, Scissors.
+
 
 ## Dataset
 ![paper](https://github.com/Hasby23/Modul-6-Praktikum/assets/71579603/19484e39-6e6b-4aff-b694-857c1c74a54d)
