@@ -10,6 +10,11 @@ MobileNetV2 telah dilatih pada berbagai dataset besar, termasuk dataset ImageNet
 
 
 ## Dataset
+Gambar yang digunakan adalah gambar gunting, batu, kertas dengan total gambar 2520 gambar. Terdiri dari 840 gambar untuk setiap kelas
+
+Splitting Dataset : Training = 80%, Validation = 10%, Testing = 10%
+
+
 ![paper](https://github.com/Hasby23/Modul-6-Praktikum/assets/71579603/19484e39-6e6b-4aff-b694-857c1c74a54d)
 ![rock](https://github.com/Hasby23/Modul-6-Praktikum/assets/71579603/b49d0e6e-84d7-44cd-8c90-5f331af9beef)
 ![scissors](https://github.com/Hasby23/Modul-6-Praktikum/assets/71579603/549715ab-4e21-4af7-9ce5-431550c246c9)
