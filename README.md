@@ -1,4 +1,4 @@
-# Modul 6 Praktikum
+# Rock Paper Scissor
 
 ## Rock, Paper, Scissors Image Classification
 Proyek Flask ini adalah aplikasi web sederhana untuk klasifikasi gambar Gunting, Batu, Kertas menggunakan model pembelajaran mesin. Pengguna dapat mengunggah gambar tangan mereka yang sedang membuat salah satu gestur, dan model akan mengklasifikasikannya sebagai Gunting, Batu, Kertas.
@@ -39,7 +39,7 @@ Splitting Dataset : Training = 80%, Validation = 10%, Testing = 10%
 ## Project Structure
 - 'app.py'          : File utama aplikasi flask
 - 'static/models/'  : Direktori yang berisikan model machine learning
-- 'static/uploads/' : direktori untuk menyimpan citra yang di upload
+- 'static/uploads/' : Direktori untuk menyimpan citra yang di upload
 - 'templates/'      : Templates HTML untuk webpages
 - 'requirements.txt': List library yang digunakan
 
